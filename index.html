@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinnacle Prep — Bright Minds, Bold Futures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--accent-1:#ff7ab6;--accent-2:#7bffca;--accent-3:#7ab6ff;--accent-4:#ffd57a;}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;margin:0}
+    .hero-gradient{background:linear-gradient(135deg,var(--accent-1),var(--accent-3))}
+    .logo-font{font-family:'Fredoka One',cursive}
+    .floaty{position:absolute;border-radius:50%;opacity:.18;mix-blend-mode:screen;animation:floaty 8s ease-in-out infinite}
+    @keyframes floaty{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.05)}100%{transform:translateY(0) scale(1)}}
+    .confetti-piece{position:absolute;width:10px;height:10px;border-radius:2px;opacity:0.95;will-change:transform,opacity}
+  </style>
+  <script>
+    function switchTab(tabId){
+      document.querySelectorAll('.tab-content').forEach(c=>c.classList.add('hidden'));
+      const el=document.getElementById(tabId); if(el) el.classList.remove('hidden');
+      document.querySelectorAll('[data-target]').forEach(b=>{
+        b.classList.toggle('text-indigo-600', b.dataset.target===tabId);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>switchTab('home'));
+  </script>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-white via-indigo-50 to-white text-gray-800">
+
+  <div id="confetti-layer" aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:60"></div>
+
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('home')" aria-label="Pinnacle Prep Home">
+        <div class="w-12 h-12 rounded-full border-2 border-indigo-200 shadow-sm bg-indigo-600 text-white flex items-center justify-center font-bold text-lg">PP</div>
+        <div>
+          <div class="text-lg font-semibold">Pinnacle Prep</div>
+          <div class="text-xs text-gray-500">Bright minds, bold futures</div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <button data-target="home" onclick="switchTab('home')" class="px-1 py-2 focus:outline-none">Home</button>
+        <button data-target="services" onclick="switchTab('services')" class="px-1 py-2 focus:outline-none">Services</button>
+      </nav>
+
+      <div class="md:hidden flex gap-3">
+        <button data-target="home" onclick="switchTab('home')" class="mobile-nav-btn text-indigo-600 font-semibold px-3 py-2">Home</button>
+        <button data-target="services" onclick="switchTab('services')" class="mobile-nav-btn text-gray-600 px-3 py-2">Services</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <section id="home" class="tab-content relative overflow-hidden rounded-2xl bg-gradient-to-r from-pink-100 via-white to-blue-100 p-8 shadow-lg">
+      <div class="absolute -left-8 -top-8 w-56 h-56 bg-[#ff7ab6] floaty" style="opacity:.12"></div>
+      <div class="absolute right-8 -top-6 w-48 h-48 bg-[#7ab6ff] floaty" style="opacity:.10"></div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-indigo-700">Make Learning Feel Like Play</h1>
+          <p class="mt-4 text-lg text-gray-700">Pinnacle Prep pairs curious students with passionate peer mentors. We turn tricky concepts into “aha!” moments through creative examples, friendly challenges, and lots of encouragement.</p>
+
+          <div class="mt-6">
+            <a href="https://forms.gle/ujtDctbKoA6PPUkT9" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white px-6 py-3 rounded-full shadow hover:bg-indigo-700">Enroll Here</a>
+          </div>
+
+          <p class="mt-4 text-sm text-gray-600">Click “Enroll Here” to apply — it’s free.</p>
+
+          <div class="mt-8 grid gap-4">
+            <details class="bg-white p-4 rounded-lg shadow">
+              <summary class="font-semibold text-indigo-700">What is Pinnacle Prep?</summary>
+              <p class="mt-2 text-gray-700">A student-run, community-driven tutoring initiative run by local Georgia high school students offering free, high-quality academic support to elementary and middle school learners.</p>
+            </details>
+
+            <details class="bg-white p-4 rounded-lg shadow">
+              <summary class="font-semibold text-indigo-700">Core Values & Goals</summary>
+              <ul class="mt-2 ml-4 list-disc text-gray-700 space-y-2">
+                <li><strong>Total Accessibility:</strong> Free tutoring for all students.</li>
+                <li><strong>Empathetic Peer Mentorship:</strong> Near-peer tutors who recently succeeded.</li>
+                <li><strong>Academic Confidence:</strong> Build growth mindset and resilience.</li>
+                <li><strong>Community Impact:</strong> Raise local educational outcomes.</li>
+              </ul>
+            </details>
+
+            <details class="bg-white p-4 rounded-lg shadow">
+              <summary class="font-semibold text-indigo-700">Accessibility Mission</summary>
+              <p class="mt-2 text-gray-700">All sessions are 100% free — volunteers donate time and expertise to remove financial barriers and make help available to any student who wants it.</p>
+            </details>
+          </div>
+        </div>
+
+        <aside class="space-y-6">
+          <div class="bg-white rounded-xl p-6 shadow-xl">
+            <h3 class="font-bold text-xl text-indigo-700">Why students love it</h3>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>Friendly mentors who make learning approachable</li>
+              <li>Short, focused sessions that boost confidence</li>
+              <li>Sessions designed for real curriculum needs</li>
+            </ul>
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Children learning with a mentor" class="rounded-lg shadow-md w-full object-cover h-48"/>
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="Hands-on activity" class="rounded-lg shadow-md w-full object-cover h-36"/>
+        </aside>
+      </div>
+
+      <div class="mt-10 rounded-2xl bg-white p-6 shadow-lg border border-indigo-100">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl font-bold text-indigo-700">Contact Us</h2>
+          <p class="mt-2 text-gray-700">Have a question? Send us a message and we’ll be in touch.</p>
+        </div>
+
+        <form action="https://formsubmit.co/pinnacleprep11@gmail.com" method="POST" class="mt-6 grid gap-4 md:grid-cols-2">
+          <input type="hidden" name="_subject" value="New message from Pinnacle Prep website" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input id="name" name="name" type="text" required class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-indigo-500 focus:outline-none" />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input id="email" name="email" type="email" required class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-indigo-500 focus:outline-none" />
+          </div>
+
+          <div class="md:col-span-2">
+            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="5" required class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-indigo-500 focus:outline-none"></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <button type="submit" class="rounded-full bg-indigo-600 px-6 py-3 text-white shadow hover:bg-indigo-700">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="services" class="tab-content hidden mt-8">
+      <h2 class="text-2xl font-bold text-indigo-700">Our Services</h2>
+      <p class="mt-2 text-gray-700">Designed for elementary and middle school students — hands-on, personalized, and always free.</p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-xl shadow p-4 flex flex-col">
+          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80" alt="One-on-one tutoring" class="rounded-md object-cover h-40 w-full"/>
+          <h3 class="mt-4 font-semibold text-indigo-700">Foundational Subject Tutoring</h3>
+          <p class="text-gray-600 mt-2 flex-grow">One-on-one or small-group sessions focused on curriculum needs and concept mastery.</p>
+          <details class="mt-3 text-gray-700">
+            <summary class="font-medium">Read more</summary>
+            <p class="mt-2">Sessions are tailored to the student’s current level. Tutors use worked examples, scaffolded practice, and quick checks for understanding. Typical topics include arithmetic, pre-algebra, reading comprehension, and foundational science concepts.</p>
+          </details>
+        </article>
+
+        <article class="bg-white rounded-xl shadow p-4 flex flex-col">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80" alt="Homework help" class="rounded-md object-cover h-40 w-full"/>
+          <h3 class="mt-4 font-semibold text-indigo-700">Homework Assistance</h3>
+          <p class="text-gray-600 mt-2 flex-grow">Guided help to complete assignments while teaching techniques for independent practice.</p>
+          <details class="mt-3 text-gray-700">
+            <summary class="font-medium">Read more</summary>
+            <p class="mt-2">Tutors walk through problems with students, modeling thought processes and encouraging students to explain reasoning. Over time, students gain strategies for planning, checking work, and studying efficiently.</p>
+          </details>
+        </article>
+
+        <article class="bg-white rounded-xl shadow p-4 flex flex-col">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Writing session" class="rounded-md object-cover h-40 w-full"/>
+          <h3 class="mt-4 font-semibold text-indigo-700">Writing, ELA & Math Reinforcement</h3>
+          <p class="text-gray-600 mt-2 flex-grow">Focused coaching on writing structure, reading analysis, and step-by-step math problem solving.</p>
+          <details class="mt-3 text-gray-700">
+            <summary class="font-medium">Read more</summary>
+            <p class="mt-2">Writing support includes brainstorming, paragraph structuring, and early essay practice. ELA sessions target comprehension strategies and vocabulary. Math reinforcement breaks problems into clear steps and uses visual models where helpful.</p>
+          </details>
+        </article>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6 items-start">
+        <div class="bg-gradient-to-br from-white to-indigo-50 rounded-xl p-6 shadow">
+          <h3 class="font-bold text-lg text-indigo-700">What We Teach — In Depth</h3>
+          <ul class="mt-4 space-y-3 text-gray-700">
+            <li><strong>Mathematics:</strong> Number sense, arithmetic fluency, fractions, ratios, pre-algebra concepts, early algebra skills, and foundational geometry reasoning.</li>
+            <li><strong>ELA & Writing:</strong> Reading strategies (summarize, infer, connect), grammar mechanics, paragraph and essay structure, and vocabulary development.</li>
+            <li><strong>Science:</strong> Inquiry-based lessons in life, earth, and physical science with hands-on demos and concept maps to build lasting understanding.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80" alt="Students collaborating" class="rounded-lg shadow-md w-full object-cover h-44"/>
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80" alt="Teacher showing concept" class="rounded-lg shadow-md w-full object-cover h-36"/>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="https://forms.gle/ujtDctbKoA6PPUkT9" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-500 text-white px-8 py-3 rounded-full shadow">Apply for Free Tutoring</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-12 bg-gradient-to-r from-indigo-900 to-pink-700 text-white">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-sm font-medium text-center">
+      <span>Bright minds, bold futures</span>
+      <span class="hidden sm:inline">•</span>
+      <span>Johns Creek, GA</span>
+      <span class="hidden sm:inline">•</span>
+      <a href="mailto:pinnacleprep11@gmail.com" class="hover:underline">pinnacleprep11@gmail.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
